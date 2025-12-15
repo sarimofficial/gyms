@@ -80,7 +80,10 @@ export default function AdminDashboard() {
   ];
   const SIGNUP_COLORS = ["#1279DE", "#EAEAEA"];
 
-  const NavItem = ({ icon: Icon, label, section }) => (
+const NavItem = ({ icon, label, section }) => {
+  const iconPath = `/assets/icons/${icon}.png`;
+
+  return (
     <button
       onClick={() => setActiveSection(section)}
       className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-md text-[13px] transition
@@ -90,11 +93,20 @@ export default function AdminDashboard() {
             : "text-white/80 hover:bg-white/10"
         }`}
     >
-      <Icon size={16} />
+      <img
+        src={iconPath}
+        className="w-[18px] h-[18px] object-contain"
+        alt={label}
+        onError={(e) => {
+          console.log("Missing icon:", iconPath);
+          e.target.src = "/assets/icons/home.png"; // fallback
+        }}
+      />
+
       <span>{label}</span>
     </button>
   );
-
+};
   const DashboardHome = () => (
     <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 bg-white rounded-xl border border-gray-200">
@@ -370,42 +382,16 @@ export default function AdminDashboard() {
               Florida Insurance <br /> Estimator
             </p>
           </div>
-
-          <nav className="px-3 py-4 flex flex-col gap-4">
-            <NavItem icon={Home} label="Dashboard" section="dashboard" />
-            <NavItem
-              icon={UserSquare2}
-              label="Consumer Management"
-              section="consumer"
-            />
-            <NavItem
-              icon={UserCircle2}
-              label="Agent Management"
-              section="agent"
-            />
-            <NavItem icon={Route} label="Lead Tracking" section="leads" />
-            <NavItem
-              icon={FileText}
-              label="Content Management"
-              section="content"
-            />
-            <NavItem icon={Headset} label="Support" section="support" />
-            <NavItem
-              icon={MapPinned}
-              label="County Management"
-              section="county"
-            />
-            <NavItem
-              icon={BadgeDollarSign}
-              label="Subscription Management"
-              section="subscription"
-            />
-            <NavItem
-              icon={Wallet}
-              label="Financial Operations"
-              section="financial"
-            />
-          </nav>
+<nav className="px-3 py-4 flex flex-col gap-4">
+  <NavItem icon="home" label="Dashboard" section="dashboard" />
+  <NavItem icon="consumermanagement" label="Consumer Management" section="consumer" />
+  <NavItem icon="agentmanagement" label="Agent Management" section="agent" />
+  <NavItem icon="leadtracking" label="Lead Tracking" section="leads" />
+  <NavItem icon="contentmanagement" label="Content Management" section="content" />
+  <NavItem icon="financialoperations" label="Financial Operations" section="financial" />
+  <NavItem icon="countymanagement" label="County Management" section="county" />
+  <NavItem icon="subscriptionmanagement" label="Subscription Management" section="subscription" />
+</nav>
 
           <div className="mt-auto p-4 border-t border-white/10">
             <div className="flex items-center gap-2 text-white/80">

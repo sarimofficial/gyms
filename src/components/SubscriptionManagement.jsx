@@ -1,4 +1,3 @@
-// src/components/SubscriptionManagement.jsx
 import React, { useState, useEffect } from "react";
 
 export default function SubscriptionManagement() {
@@ -6,99 +5,56 @@ export default function SubscriptionManagement() {
 
   useEffect(() => {
     setSubscriptions([
-      {
-        id: 1,
-        agent: "Amanda Greene",
-        img: "https://i.pravatar.cc/40?img=12",
-        county: "Miami-Dade",
-        price: 1000,
-        status: "Paid",
-      },
-      {
-        id: 2,
-        agent: "Amanda Greene",
-        img: "https://i.pravatar.cc/40?img=14",
-        county: "Broward",
-        price: 1000,
-        status: "Paid",
-      },
-      {
-        id: 3,
-        agent: "Brian Douglas",
-        img: "https://i.pravatar.cc/40?img=16",
-        county: "Palm Beach",
-        price: 1000,
-        status: "Pending",
-      },
-      {
-        id: 4,
-        agent: "John Carter",
-        img: "https://i.pravatar.cc/40?img=18",
-        county: "Miami-Dade",
-        price: 1000,
-        status: "Paid",
-      },
-      {
-        id: 5,
-        agent: "John Carter",
-        img: "https://i.pravatar.cc/40?img=20",
-        county: "Hillsborough",
-        price: 1000,
-        status: "Paid",
-      },
-      {
-        id: 6,
-        agent: "Sofia Martinez",
-        img: "https://i.pravatar.cc/40?img=22",
-        county: "Broward",
-        price: 1000,
-        status: "Pending",
-      },
+      { id: 1, agent: "Amanda Greene", img: "https://i.pravatar.cc/40?img=12", county: "Miami-Dade", price: 1000, status: "Paid" },
+      { id: 2, agent: "Amanda Greene", img: "https://i.pravatar.cc/40?img=14", county: "Broward", price: 1000, status: "Paid" },
+      { id: 3, agent: "Brian Douglas", img: "https://i.pravatar.cc/40?img=16", county: "Palm Beach", price: 1000, status: "Pending" },
+      { id: 4, agent: "John Carter", img: "https://i.pravatar.cc/40?img=18", county: "Miami-Dade", price: 1000, status: "Paid" },
+      { id: 5, agent: "John Carter", img: "https://i.pravatar.cc/40?img=20", county: "Hillsborough", price: 1000, status: "Paid" },
+      { id: 6, agent: "Sofia Martinez", img: "https://i.pravatar.cc/40?img=22", county: "Broward", price: 1000, status: "Pending" },
     ]);
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      {/* Page Title */}
-      <h2 className="text-2xl font-bold text-gray-800 mb-8">
-        Subscription <span className="text-green-600">Management</span>
+    <div className="min-h-screen bg-white px-8 py-10">
+
+      {/* Title */}
+      <h2 className="text-[15px] font-medium text-[#1D4C37] mb-6">
+        Subscription <span className="font-semibold">Management</span>
       </h2>
 
-      {/* Main Card */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-        {/* Card Header */}
-        <div className="px-6 py-5 border-b border-gray-200 flex justify-between items-center">
-          <h3 className="text-lg font-semibold text-gray-900">Agent Subscriptions</h3>
+      {/* Card */}
+      <div className="bg-white border border-gray-300 rounded-xl p-6">
 
-          {/* Search + Filter */}
+        {/* Header */}
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-[17px] font-semibold text-gray-800">
+            Agent Subscriptions
+          </h3>
+
           <div className="flex items-center gap-3">
+
+            {/* Search */}
             <div className="relative">
               <input
                 type="text"
                 placeholder="Search"
-                className="w-64 pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+                className="w-40 h-[34px] pl-9 pr-3 text-sm border border-gray-300 rounded-full 
+                           placeholder-gray-400 focus:outline-none"
               />
+
               <svg
-                className="absolute left-3 top-3 w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
+                className="absolute left-3 top-[9px] w-4 h-4 text-gray-400"
+                fill="none" stroke="currentColor" strokeWidth="2"
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.3-4.3M10.5 17a6.5 6.5 0 100-13 6.5 6.5 0 000 13z" />
               </svg>
             </div>
 
-            <button className="p-2.5 bg-gray-100 hover:bg-gray-200 rounded-lg transition">
-              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4h18M3 10h18M3 16h18" />
-                <circle cx="8" cy="4" r="2" />
-                <circle cx="12" cy="10" r="2" />
-                <circle cx="16" cy="16" r="2" />
+            {/* Filter Button */}
+            <button className="w-[34px] h-[34px] border border-gray-300 bg-white rounded-lg flex items-center justify-center">
+              <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M3 6h18M3 12h18M3 18h18" />
               </svg>
             </button>
           </div>
@@ -108,7 +64,7 @@ export default function SubscriptionManagement() {
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="bg-blue-50 text-gray-600 text-xs font-medium uppercase tracking-wider">
+              <tr className="bg-[#EDF6FF] text-gray-600 text-[13px] h-12 font-semibold">
                 <Th>S No.</Th>
                 <Th>Agent</Th>
                 <Th>County</Th>
@@ -117,40 +73,40 @@ export default function SubscriptionManagement() {
                 <Th>Actions</Th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-100">
+
+            <tbody>
               {subscriptions.map((sub, index) => (
-                <tr key={sub.id} className="hover:bg-gray-50 transition duration-150 h-16">
-                  {/* S No. */}
-                  <Td className="text-center font-medium text-gray-700">
-                    {index + 1}
-                  </Td>
+                <tr key={sub.id} className="h-14 border-b border-gray-200">
+
+                  {/* S No */}
+                  <Td className="text-center">{index + 1}</Td>
 
                   {/* Agent */}
                   <Td>
                     <div className="flex items-center gap-3">
-                      <img
-                        src={sub.img}
-                        alt={sub.agent}
-                        className="w-10 h-10 rounded-full object-cover ring-2 ring-gray-100"
-                      />
-                      <span className="font-medium text-gray-900">{sub.agent}</span>
+                      <img src={sub.img} className="w-10 h-10 rounded-full" />
+                      <span className="text-[14px] font-medium text-gray-800">
+                        {sub.agent}
+                      </span>
                     </div>
                   </Td>
 
                   {/* County */}
-                  <Td className="text-gray-700">{sub.county}</Td>
+                  <Td className="text-[14px] text-gray-700">{sub.county}</Td>
 
                   {/* Price */}
-                  <Td className="font-semibold text-gray-900">${sub.price.toLocaleString()}</Td>
+                  <Td className="font-semibold text-gray-900 text-[14px]">
+                    ${sub.price.toLocaleString()}
+                  </Td>
 
-                  {/* Status Badge */}
+                  {/* Status */}
                   <Td>
                     {sub.status === "Paid" ? (
-                      <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-300">
+                      <span className="px-3 py-[3px] text-xs font-medium bg-green-100 text-green-700 border border-green-300 rounded-full">
                         Paid
                       </span>
                     ) : (
-                      <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 border border-yellow-300">
+                      <span className="px-3 py-[3px] text-xs font-medium bg-yellow-100 text-yellow-700 border border-yellow-300 rounded-full">
                         Pending
                       </span>
                     )}
@@ -158,39 +114,41 @@ export default function SubscriptionManagement() {
 
                   {/* Actions */}
                   <Td>
-                    <button className="p-2 hover:bg-gray-100 rounded-lg transition">
-                      <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                    <button className="p-1 hover:bg-gray-100 rounded-lg">
+                      <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.4-9.4a2 2 0 112.8 2.8L11.8 15H9v-2.8l8.6-8.6z"
                         />
                       </svg>
                     </button>
                   </Td>
+
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+
       </div>
     </div>
   );
 }
 
-// Reusable Table Components
+/* Header Cell */
 const Th = ({ children }) => (
-  <th className="px-6 py-4 text-left font-medium">
-    <div className="flex items-center gap-2">
+  <th className="px-6 text-left">
+    <div className="flex items-center gap-1">
       {children}
-      <svg className="w-3 h-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+
+      {/* Sort Arrow */}
+      <svg className="w-2.5 h-2.5 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M8 9l4-4 4 4M8 15l4 4 4-4" />
       </svg>
     </div>
   </th>
 );
 
+/* Data Cell */
 const Td = ({ children, className = "" }) => (
-  <td className={`px-6 py-4 text-sm ${className}`}>{children}</td>
+  <td className={`px-6 text-[14px] text-gray-700 ${className}`}>{children}</td>
 );
