@@ -1,7 +1,7 @@
 {
-  "buildCommand": "vite build",
+  "buildCommand": "cd $VERCEL_PROJECT_ROOT && pnpm install --no-frozen-lockfile && pnpm vite build",
   "outputDirectory": "dist",
-  "installCommand": "pnpm install --no-frozen-lockfile",
+  "installCommand": "pnpm install --ignore-workspace --no-frozen-lockfile",
   "framework": "vite",
   "rewrites": [
     {
