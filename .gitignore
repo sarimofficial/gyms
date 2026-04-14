@@ -1,19 +1,17 @@
-<<<<<<< HEAD
-# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
-
-# compiled output
-dist
-tmp
-out-tsc
-*.tsbuildinfo
-.expo
-.expo-shared
-
 # dependencies
 node_modules
 .env
 .env.*
 !.env.example
+
+# compiled output
+dist
+dist-ssr
+tmp
+out-tsc
+*.tsbuildinfo
+.expo
+.expo-shared
 
 # IDEs and editors
 /.idea
@@ -23,35 +21,12 @@ node_modules
 *.launch
 .settings/
 *.sublime-workspace
-
-# IDE - VSCode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
-.DS_Store
-Thumbs.db
-
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
-
-# Replit
-.cache/
-.local/
-=======
 # Logs
 logs
 *.log
@@ -61,19 +36,25 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+/typings
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# System Files
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
->>>>>>> 41197100c7c9fddb07061873f185eeed75588733
+
+# Project specific
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
+.cache/
+.local/
+*.local

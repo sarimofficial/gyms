@@ -1,28 +1,16 @@
 {
-<<<<<<< HEAD
-  "name": "workspace",
+  "name": "gym-management-system",
   "version": "0.0.0",
+  "private": true,
+  "type": "module",
   "license": "MIT",
   "scripts": {
-    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
-    "build": "pnpm run typecheck && pnpm -r --if-present run build",
-    "typecheck:libs": "tsc --build",
-    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
-  },
-  "private": true,
-  "devDependencies": {
-    "typescript": "~5.9.2",
-    "prettier": "^3.8.1"
-=======
-  "name": "florida",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "pnpm -r --if-present run build && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
+    "typecheck": "tsc --build && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
   "dependencies": {
     "@fontsource/dm-sans": "^5.2.8",
@@ -48,7 +36,8 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
+    "prettier": "^3.8.1",
+    "typescript": "~5.9.2",
     "vite": "^7.1.7"
->>>>>>> 41197100c7c9fddb07061873f185eeed75588733
   }
 }
