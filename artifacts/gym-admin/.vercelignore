@@ -1,0 +1,14 @@
+# Vercel ignore patterns
+node_modules
+.git
+*.log
+.DS_Store
+
+# Build artifacts
+dist
+build
+
+# Testing
+coverage
+*.test.ts
+*.test.js

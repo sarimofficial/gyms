@@ -1,0 +1,33 @@
+# Vercel ignore patterns
+node_modules
+.git
+.env.local
+.env
+*.log
+.DS_Store
+.vscode
+.idea
+
+# Exclude other artifacts when deploying specific apps
+artifacts/gym-member-app
+artifacts/mockup-sandbox
+.replit
+.replitignore
+replit.md
+
+# Build artifacts
+dist
+build
+.next
+out
+
+# Testing
+coverage
+*.test.ts
+*.test.js
+*.spec.ts
+*.spec.js
+
+# Documentation
+*.md
+!README.md
